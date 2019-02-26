@@ -1,0 +1,71 @@
+@font-face {
+  font-family: MexicanTequila;
+  src: url(../assets/font/MexicanTequila.ttf)
+}
+
+body {
+  overflow: hidden;
+}
+
+.drop {
+  font-family: MexicanTequila;
+  top: -160px;
+  font-size: 90px;
+  text-align: center;
+  color: #466A21;
+  position: relative;
+  animation-timing-function: ease-out;
+  animation: hover 3s infinite;
+   -webkit-animation: hover 3s infinite; 
+}
+
+#sign {
+  position: relative;
+  height: 120px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  transition: transform .3s;
+  cursor: pointer;
+  animation: rotate 4s infinite;
+  transform-origin: 50% -120%;
+  -webkit-animation: rotate 4s infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-filter: drop-shadow( 0 0 10px rgba(0, 0, 0, .5));
+  filter: drop-shadow( 0 0 10px rgba(0, 0, 0, .5));
+}
+
+#sign:hover {
+  filter: drop-shadow( 0 0 10px rgba(0, 0, 0, 1));
+}
+
+@keyframes hover {
+  0%   {transform: translateY(0px);}
+  50%  {transform: translateY(15px);}
+  100% {transform: translateY(0px);}
+}
+
+@-webkit-keyframes hover {
+  0%   {transform: translateY(0px);}
+  50%  {transform: translateY(15px);}
+  100% {transform: translateY(0px);}
+}
+
+@keyframes rotate {
+  0% {transform: rotate(-5deg);}
+  50% {transform: rotate(5deg);}
+    100% {transform: rotate(-5deg);}
+}
+
+@-webkit-keyframes rotate {
+  0% {transform: rotate(-5deg);}
+  50% {transform: rotate(5deg);}
+    100% {transform: rotate(-5deg);}
+}
+
+/* @keyframes drop {
+  0% {top: -150px;}
+  80% {top: 20px}
+  100% {top: 0}
+} */
