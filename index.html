@@ -8,10 +8,38 @@
   <script src="assets/game.js"></script>
   <title>Guac-a-mole</title>
 </head>
-<body onload="dropText(), dropSign()">
-  <h1 class="drop">GUAC-A-MOLE</h1>
+<body onload="loadGame()">
 
+  <div class="welcome">
+    <h1 class="drop">GUAC-A-MOLE</>
+    <img onclick="startGame()" id="sign" src="assets/img/sign.svg" alt="">
+  </div>
 
-  <img onclick="function()" id="sign" src="../Guac-a-mole/assets/img/sign.svg" alt="">
+  <div class="game">
+    <div class="hole-1">
+      <img class="avocado" src="assets/img/avocado.svg" alt="">
+    </div>
+
+    <div class="hole-2">
+      <img class="avocado" src="assets/img/avocado.svg" alt="">
+    </div>
+
+    <div class="hole-3">
+      <img class="avocado" src="assets/img/avocado.svg" alt="">
+    </div>
+
+    <div class="hole-4">
+      <img class="avocado" src="assets/img/avocado.svg" alt="">
+    </div>
+
+    <div class="hole-5">
+      <img class="avocado" src="assets/img/avocado.svg" alt="">
+    </div>
+
+    <div class="hole-6">
+      <img class="avocado" src="assets/img/avocado.svg" alt="">
+    </div>
+  </div>
+
 </body>
 </html>

@@ -1,7 +1,12 @@
-function dropText () {
+const loadGame = () => {
+  dropText()
+  dropSign()
+}
+
+const dropText = () => {
   const elem = document.querySelector('.drop')
   let pos = -160
-  const id = setInterval(frame, 0.1)
+  const id = setInterval(frame, 1)
   function frame () {
     if (pos === 0) {
       clearInterval(id)
@@ -12,12 +17,12 @@ function dropText () {
   }
 }
 
-function dropSign () {
+const dropSign = () => {
   const elem = document.querySelector('#sign')
   let pos = -300
-  const id = setInterval(frame, 0.1)
+  const id = setInterval(frame, 1)
   function frame () {
-    if (pos === 0) {
+    if (pos === 40) {
       clearInterval(id)
     } else {
       pos++
@@ -25,3 +30,15 @@ function dropSign () {
     }
   }
 }
+
+// const startGame = () => {
+//   const welcome = document.querySelector('.welcome')
+//   welcome.remove()
+//   const revealGame = document.querySelector('.game')
+//   revealGame.style.visibility = 'visible'
+// }
+
+// const hideGame = () => {
+//   const game = document.querySelector('.game')
+//   game.remove()
+// }

@@ -64,8 +64,15 @@ body {
     100% {transform: rotate(-5deg);}
 }
 
-/* @keyframes drop {
-  0% {top: -150px;}
-  80% {top: 20px}
-  100% {top: 0}
-} */
+.avocado {
+  height: 150px;
+  top: 100%;
+}
+
+.game {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
