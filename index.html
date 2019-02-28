@@ -5,41 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="assets/style.css">
-  <script src="assets/game.js"></script>
-  <title>Guac-a-mole</title>
+  <title>Guac-a-mole!</title>
 </head>
+
 <body onload="loadGame()">
 
-  <div class="welcome">
-    <h1 class="drop">GUAC-A-MOLE</>
-    <img onclick="startGame()" id="sign" src="assets/img/sign.svg" alt="">
-  </div>
+  <!-- <button onclick="playGameNow()" class="reveal">reveal</button> -->
 
-  <div class="game">
-    <div class="hole-1">
-      <img class="avocado" src="assets/img/avocado.svg" alt="">
+  <div class="playGame">  
+      <h1>Guac-a-mole!</h1>
+      <p class="score">0</p>
+      <button onClick="startGame()">Start!</button>
+      
+      <div class="game">
+        <div class="hole hole1">
+          <div class="avocado"></div>
+        </div>
+        <div class="hole hole2">
+          <div class="avocado"></div>
+        </div>
+        <div class="hole hole3">
+          <div class="avocado"></div>
+        </div>
+        <div class="hole hole4">
+          <div class="avocado"></div>
+        </div>
+        <div class="hole hole5">
+          <div class="avocado"></div>
+        </div>
+        <div class="hole hole6">
+          <div class="avocado"></div>
+        </div>
+      </div>
     </div>
 
-    <div class="hole-2">
-      <img class="avocado" src="assets/img/avocado.svg" alt="">
-    </div>
-
-    <div class="hole-3">
-      <img class="avocado" src="assets/img/avocado.svg" alt="">
-    </div>
-
-    <div class="hole-4">
-      <img class="avocado" src="assets/img/avocado.svg" alt="">
-    </div>
-
-    <div class="hole-5">
-      <img class="avocado" src="assets/img/avocado.svg" alt="">
-    </div>
-
-    <div class="hole-6">
-      <img class="avocado" src="assets/img/avocado.svg" alt="">
-    </div>
-  </div>
-
+  <script src="assets/game.js"></script>
 </body>
 </html>

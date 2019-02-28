@@ -1,44 +1,58 @@
-const loadGame = () => {
-  dropText()
-  dropSign()
+const holes = document.querySelectorAll('.hole')
+const scoreBoard = document.querySelector('.score')
+const avocados = document.querySelectorAll('.avocado')
+let lastHole
+let timeUp = false
+let score = 0
+
+const randomTime = (min, max) => {
+  return Math.round(Math.random() * (max - min) + min)
 }
 
-const dropText = () => {
-  const elem = document.querySelector('.drop')
-  let pos = -160
-  const id = setInterval(frame, 1)
-  function frame () {
-    if (pos === 0) {
-      clearInterval(id)
-    } else {
-      pos++
-      elem.style.top = pos + 'px'
-    }
+const randomHole = (holes) => {
+  const idx = Math.floor(Math.random() * holes.length)
+  const hole = holes[idx]
+  if (hole === lastHole) {
+    console.log('Ah nah thats the same one bud')
+    return randomHole(holes)
   }
+  lastHole = hole
+  return hole
 }
 
-const dropSign = () => {
-  const elem = document.querySelector('#sign')
-  let pos = -300
-  const id = setInterval(frame, 1)
-  function frame () {
-    if (pos === 40) {
-      clearInterval(id)
-    } else {
-      pos++
-      elem.style.top = pos + 'px'
-    }
-  }
+const pop = () => {
+  const time = randomTime(200, 1000)
+  const hole = randomHole(holes)
+  hole.classList.add('up')
+  setTimeout(() => {
+    hole.classList.remove('up')
+    if (!timeUp) pop()
+  }, time)
 }
 
-// const startGame = () => {
-//   const welcome = document.querySelector('.welcome')
-//   welcome.remove()
-//   const revealGame = document.querySelector('.game')
-//   revealGame.style.visibility = 'visible'
+const startGame = () => {
+  scoreBoard.textContent = 0
+  timeUp = false
+  score = 0
+  pop()
+  setTimeout(() => timeUp = true, 10000)
+}
+
+function bonk (e) {
+  if (!e.isTrusted) return // cheater!
+  score++
+  this.parentNode.classList.remove('up')
+  scoreBoard.textContent = score
+}
+
+avocados.forEach(avocado => avocado.addEventListener('click', bonk))
+
+// const loadGame = () => {
+//   const game = document.querySelector('.playGame')
+//   game.style.visibility = 'hidden'
 // }
 
-// const hideGame = () => {
-//   const game = document.querySelector('.game')
-//   game.remove()
+// const playGameNow = () => {
+//   const game = document.querySelector('.playGame')
+//   game.style.visibility = 'visible'
 // }
