@@ -10,12 +10,15 @@
 
 <body onload="loadGame()">
 
-  <!-- <button onclick="playGameNow()" class="reveal">reveal</button> -->
+  <div class="menu">
+    <h1 class="drop">GUAC-A-MOLE</>
+      <img onclick="goToGame()" id="sign" src="assets/img/sign.svg" alt="">
+  </div>
 
   <div class="playGame">  
       <h1>Guac-a-mole!</h1>
-      <p class="score">0</p>
-      <button onClick="startGame()">Start!</button>
+      <p class="score"> Score: 0</p>
+      <img class="start" onclick="startGame()" src="assets/img/start.svg" alt="">
       
       <div class="game">
         <div class="hole hole1">

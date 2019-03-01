@@ -9,7 +9,6 @@ body {
   font-family: MexicanTequila;
   overflow: hidden;
   background: #ffc600;
-  font-size: 80px;
   text-align: center;
   color: #466A21;
 }
@@ -19,29 +18,38 @@ h1 {
   line-height: 1;
   margin-bottom: 0;
   white-space: nowrap;
+  font-size: 80px;
 }
 
-button {
-  background-color: #466A21;
-  color: #ffc600;
-  font-family: MexicanTequila;
+/* .menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+} */
+
+.start {
   height: 70px;
   width: 170px;
-  border-radius: 20px;
-  border: none;
-  font-size: 40px;
-  transition: .2s
+  transition: .2s;
+  -webkit-filter: drop-shadow( 0 0 10px rgba(0, 0, 0, .5));
+  filter: drop-shadow( 0 0 10px rgba(0, 0, 0, .5));
+  animation: rotate 4s infinite;
+  transform-origin: 50% -120%;
+  -webkit-animation: rotate 4s infinite;
+  animation-timing-function: ease-in-out;
 }
 
-button:hover {
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
-  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+.start:hover {
+  -webkit-filter: drop-shadow( 0 0 10px rgba(0, 0, 0, 1));
+  filter: drop-shadow( 0 0 10px rgba(0, 0, 0, 1));
+  transition: .2s;
   cursor: pointer;
 }
 
-.scoreBoard {
+.score {
   margin-top: 50px;
+  font-size: 50px;
 }
 
 .game {
@@ -50,7 +58,7 @@ button:hover {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -80%);
+  transform: translate(-50%, -50%);
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -86,4 +94,73 @@ button:hover {
 
 .hole.up .avocado {
   top: 0;
+}
+
+@keyframes rotate {
+  0% {transform: rotate(-3deg);}
+  50% {transform: rotate(3deg);}
+    100% {transform: rotate(-3deg);}
+}
+
+@-webkit-keyframes rotate {
+  0% {transform: rotate(-3deg);}
+  50% {transform: rotate(3deg);}
+    100% {transform: rotate(-3deg);}
+}
+
+.drop {
+  font-family: MexicanTequila;
+  top: -160px;
+  font-size: 90px;
+  text-align: center;
+  color: #466A21;
+  position: relative;
+  animation-timing-function: ease-out;
+  animation: hover 3s infinite;
+   -webkit-animation: hover 3s infinite; 
+}
+
+#sign {
+  position: relative;
+  height: 120px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  transition: transform .3s;
+  cursor: pointer;
+  animation: rotate 4s infinite;
+  transform-origin: 50% -120%;
+  -webkit-animation: rotate 4s infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-filter: drop-shadow( 0 0 10px rgba(0, 0, 0, .5));
+  filter: drop-shadow( 0 0 10px rgba(0, 0, 0, .5));
+}
+
+#sign:hover {
+  filter: drop-shadow( 0 0 10px rgba(0, 0, 0, 1));
+}
+
+@keyframes hover {
+  0%   {transform: translateY(0px);}
+  50%  {transform: translateY(15px);}
+  100% {transform: translateY(0px);}
+}
+
+@-webkit-keyframes hover {
+  0%   {transform: translateY(0px);}
+  50%  {transform: translateY(15px);}
+  100% {transform: translateY(0px);}
+}
+
+@keyframes rotate {
+  0% {transform: rotate(-5deg);}
+  50% {transform: rotate(5deg);}
+    100% {transform: rotate(-5deg);}
+}
+
+@-webkit-keyframes rotate {
+  0% {transform: rotate(-5deg);}
+  50% {transform: rotate(5deg);}
+    100% {transform: rotate(-5deg);}
 }
