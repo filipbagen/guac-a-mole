@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/style.css">
   <title>Guac-a-mole!</title>
 </head>
 
 <body onload="loadGame()">
+
+  <i onclick="toPlay()" id="mute" class="fas fa-volume-mute fa-2x"></i>
+  <i onclick="toMute()" id="unmute" class="fas fa-volume-up fa-2x"></i>
 
   <div class="menu">
     <h1 class="drop">GUAC-A-MOLE</>
@@ -44,7 +48,8 @@
         </div>
       </div>
     </div>
-
+<audio class="background" src="assets/sound/wildwest.m4a"></audio>
+<audio class="gun" src="assets/sound/gun.m4a"></audio>
   <script src="assets/game.js"></script>
 </body>
 </html>

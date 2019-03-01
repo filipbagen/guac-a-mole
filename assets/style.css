@@ -27,9 +27,16 @@ body {
   transform: translate(0%, -100%);
 }
 
-/* .start.X {
-  visibility: hidden;
-} */
+i {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  margin: 40px;
+}
+
+i:hover {
+  cursor: pointer;
+}
 
 .menu.up {
   animation-timing-function: ease-in-out;

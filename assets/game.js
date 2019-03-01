@@ -65,15 +65,17 @@ const pop = () => {
 
 const startGame = () => {
   setTimeout(() => {
-    scoreBoard.textContent = 'score: ' + score
+    scoreBoard.textContent = 'score: ' + 0
     timeUp = false
     score = 0
     pop()
     setTimeout(() => timeUp = true, 10000)
-  }, 500);
+  }, 500)
+  gun()
 }
 
 function bonk (e) {
+  gun()
   if (!e.isTrusted) return // cheater!
   score++
   this.parentNode.classList.remove('up')
@@ -86,8 +88,31 @@ const loadGame = () => {
   const game = document.querySelector('.playGame')
   game.style.visibility = 'hidden'
   init()
+  playMusic()
+  const mute = document.querySelector('#mute')
+  mute.style.visibility = 'hidden'
   // const startBtn = document.querySelector('.start')
   // startBtn.classList.add('X')
+}
+
+const toMute = () => {
+  const mute = document.querySelector('#mute')
+  mute.style.visibility = 'visible'
+  const unmute = document.querySelector('#unmute')
+  unmute.style.visibility = 'hidden'
+  const gunSound = document.querySelector('.gun')
+  const music = document.querySelector('.background')
+  gunSound.muted = true
+  music.muted = true
+}
+
+const toPlay = () => {
+  const mute = document.querySelector('#mute')
+  mute.style.visibility = 'hidden'
+  const unmute = document.querySelector('#unmute')
+  unmute.style.visibility = 'visible'
+  const music = document.querySelector('.background')
+  music.muted = false
 }
 
 const goToGame = () => {
@@ -96,8 +121,15 @@ const goToGame = () => {
   const game = document.querySelector('.playGame')
   game.style.visibility = 'visible'
   game.classList.add('up')
+  gun()
+}
 
+const playMusic = () => {
+  const music = document.querySelector('.background')
+  music.play()
+}
 
-  // const startBtn = document.querySelector('.start')
-  // startBtn.classList.remove('X')
+const gun = () => {
+  const gunSound = document.querySelector('.gun')
+  gunSound.play()
 }
