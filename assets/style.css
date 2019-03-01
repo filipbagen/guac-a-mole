@@ -13,7 +13,7 @@ body {
   color: #466A21;
 }
 
-h1 {
+.title {
   top: 100px;
   line-height: 1;
   margin-bottom: 0;
@@ -21,12 +21,27 @@ h1 {
   font-size: 80px;
 }
 
-/* .menu {
-  position: absolute;
+.intro {
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -100%);
+  transform: translate(0%, -100%);
+}
+
+/* .start.X {
+  visibility: hidden;
 } */
+
+.menu.up {
+  animation-timing-function: ease-in-out;
+  animation: rollUp 1.8s;
+  animation-fill-mode: forwards;
+}
+
+.playGame.up {
+  animation-timing-function: ease-out;
+  animation: rollUp1 2s;
+  animation-fill-mode: forwards;
+}
 
 .start {
   height: 70px;
@@ -58,7 +73,7 @@ h1 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -30%);
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -141,6 +156,10 @@ h1 {
   filter: drop-shadow( 0 0 10px rgba(0, 0, 0, 1));
 }
 
+.playGame {
+
+}
+
 @keyframes hover {
   0%   {transform: translateY(0px);}
   50%  {transform: translateY(15px);}
@@ -156,11 +175,23 @@ h1 {
 @keyframes rotate {
   0% {transform: rotate(-5deg);}
   50% {transform: rotate(5deg);}
-    100% {transform: rotate(-5deg);}
+  100% {transform: rotate(-5deg);}
 }
 
 @-webkit-keyframes rotate {
   0% {transform: rotate(-5deg);}
   50% {transform: rotate(5deg);}
-    100% {transform: rotate(-5deg);}
+  100% {transform: rotate(-5deg);}
+}
+
+@keyframes rollUp {
+  0% {transform: translateY(0px);}
+  8% {transform: translateY(15px);}
+  100% {transform: translateY(-500px);}
+}
+
+@keyframes rollUp1 {
+  0% {transform: translateY(950px);}
+  85% {transform: translateY(-15px);}
+  100% {transform: translateY(0px);}
 }

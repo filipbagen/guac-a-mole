@@ -8,7 +8,6 @@ let score = 0
 const init = () => {
   dropText()
   dropSign()
-  hideGame()
 }
 
 const dropText = () => {
@@ -87,11 +86,18 @@ const loadGame = () => {
   const game = document.querySelector('.playGame')
   game.style.visibility = 'hidden'
   init()
+  // const startBtn = document.querySelector('.start')
+  // startBtn.classList.add('X')
 }
 
 const goToGame = () => {
+  const menu = document.querySelector('.menu')
+  menu.classList.add('up')
   const game = document.querySelector('.playGame')
   game.style.visibility = 'visible'
-  const menu = document.querySelector('.menu')
-  menu.style.display = 'none'
+  game.classList.add('up')
+
+
+  // const startBtn = document.querySelector('.start')
+  // startBtn.classList.remove('X')
 }
