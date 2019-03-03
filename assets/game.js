@@ -88,11 +88,13 @@ const loadGame = () => {
   const game = document.querySelector('.playGame')
   game.style.visibility = 'hidden'
   init()
-  playMusic()
   const mute = document.querySelector('#mute')
-  mute.style.visibility = 'hidden'
-  // const startBtn = document.querySelector('.start')
-  // startBtn.classList.add('X')
+  mute.style.visibility = 'visible'
+  const unmute = document.querySelector('#unmute')
+  unmute.style.visibility = 'hidden'
+  const music = document.querySelector('.background')
+  music.play()
+  music.muted = true
 }
 
 const toMute = () => {
@@ -122,11 +124,6 @@ const goToGame = () => {
   game.style.visibility = 'visible'
   game.classList.add('up')
   gun()
-}
-
-const playMusic = () => {
-  const music = document.querySelector('.background')
-  music.play()
 }
 
 const gun = () => {
