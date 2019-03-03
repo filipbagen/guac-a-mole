@@ -70,7 +70,7 @@ i:hover {
 }
 
 .score {
-  margin-top: 50px;
+  margin: 30px;
   font-size: 50px;
 }
 
@@ -169,6 +169,18 @@ i:hover {
 
 .playGame {
   visibility: hidden;
+}
+
+#sign {
+  visibility: hidden;
+}
+
+.select-style {
+  visibility: hidden;
+}
+
+.dropdown {
+  margin: 20px;
 }
 
 @keyframes hover {

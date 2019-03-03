@@ -11,6 +11,8 @@
 
 <body onload="loadGame()">
 
+
+
   <i onclick="toPlay()" id="mute" class="fas fa-volume-mute fa-2x"></i>
   <i onclick="toMute()" id="unmute" class="fas fa-volume-up fa-2x"></i>
 
@@ -24,7 +26,25 @@
       <div class="intro">
           <h1 class="title">Guac-a-mole!</h1>
           <p class="score">Score: 0</p>
-          <img class="start" onclick="startGame()" src="assets/img/start.svg" alt="">
+
+          <div class="dropdown">
+              <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="extreme">Extreme</option>
+              </select>
+
+              <select id="time">
+                <option value="5000">5 sek</option>
+                <option value="10000">10 sek</option>
+                <option value="15000">15 sek</option>
+                <option value="20000">20 sek</option>
+              </select>
+            </div>
+
+<img class="start" onclick="startGame()" src="assets/img/start.svg" alt="">
+              
       </div>
   
       <div class="game">
